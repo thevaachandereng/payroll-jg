@@ -804,7 +804,7 @@ server <- function(input, output) {
           "Attached is your **password-protected payslip** for **",
           input$pay_month, "**.\n\n",
           "🔐 Password: **last 4 digits of your IC number**\n\n",
-          "Regards,\nPayroll Team"
+          "Regards,\n Payroll Team"
         ))
       ) %>%
         add_attachment(files$pdf)
@@ -812,7 +812,7 @@ server <- function(input, output) {
       smtp_send(
         email,
         to = emp$EMAIL,
-        from = "thevaasiinen@gmail.com",
+        from = "juaragemilang@gmail.com",
         subject = paste0("Payslip – ", input$pay_month),
         credentials = creds_file("~/.gmail_payroll_creds")
       )
